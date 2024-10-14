@@ -1,0 +1,31 @@
+graph TD
+    subgraph "Dispositivos de Usuario"
+        A["Navegador Web"]
+        B["Aplicación Móvil"]
+    end
+
+    subgraph "Servidor de Aplicaciones"
+        C["Servidor Web #43; #60;#60;Apache#62;#62;"]
+        D["Aplicación de Venta de Perfumes #43; #60;#60;Node.js#62;#62;"]
+    end
+
+    subgraph "Servidor de Base de Datos"
+        E["Base de Datos #43; #60;#60;PostgreSQL#62;#62;"]
+    end
+
+    subgraph "Servicios Externos"
+        F["Pasarela de Pago #43; #60;#60;PayPal#62;#62;"]
+        G["Servicio de Envío #43; #60;#60;FedEx API#62;#62;"]
+    end
+
+    subgraph "Servidor de Almacenamiento"
+        H["Almacenamiento de Imágenes #43; #60;#60;Amazon S3#62;#62;"]
+    end
+
+    A -->|"HTTPS"| C
+    B -->|"HTTPS"| C
+    C -->|"HTTPS"| D
+    D -->|"TCP/IP"| E
+    D -->|"HTTPS"| F
+    D -->|"HTTPS"| G
+    D -->|"HTTPS"| H
